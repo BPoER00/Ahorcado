@@ -1,0 +1,306 @@
+@model Palabras
+@{
+    ViewData["Title"] = "Jugar";
+    var dato = "";
+
+    dato = ViewBag.Palabra;
+     
+
+    int numero = dato.Length;
+}
+
+
+<div class="jumbotron" style="height: 45rem; background-color:  #c0392b;">
+    <div class="col">
+        <div class="jumbotron" style="height: 5rem;">
+            <div class="row" style="margin-top: -3rem; height: 6rem;">
+                <div class="col-4" style="background-color: #ffc107; text-align: center; border-radius: 10rem;">
+                        <h5>La palabra tiene @numero Letras</h5>
+                        <h5>La palabra comienza con @dato[0]</h5>
+                        <h5>La palabra termina con @dato[numero-1]</h5>
+                </div>
+                <div class="col-4" style="background-color: gray; text-align: center; border-radius: 10rem;">
+                        <br><h4><label id="lblPalabra"></label></h4>
+                        
+                </div>
+                <div class="col-4" style="background-color: #ffc107; text-align: center; border-radius: 10rem;">
+                        <br><img id="vida3" style="width: 5rem; height: 3rem;" src="https://freepikpsd.com/file/2019/10/corazon-sin-fondo-png-Transparent-Images-300x227.png" alt="vida">
+                        <img id="vida2" style="width: 5rem; height: 3rem;" src="https://freepikpsd.com/file/2019/10/corazon-sin-fondo-png-Transparent-Images-300x227.png" alt="vida">
+                        <img id="vida1" style="width: 5rem; height: 3rem;" src="https://freepikpsd.com/file/2019/10/corazon-sin-fondo-png-Transparent-Images-300x227.png" alt="vida">
+                </div>
+            </div>
+        </div>
+        <div class="jumbotron" style="height: 22rem; text-align: center;">
+            <input type="submit" id="BotonA" value="A" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonB" value="B" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonC" value="C" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonD" value="D" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonE" value="E" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonF" value="F" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonG" value="G" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonH" value="H" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonI" value="I" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonJ" value="J" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonK" value="K" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonL" value="L" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonM" value="M" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonN" value="N" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonO" value="O" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonP" value="P" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonQ" value="Q" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonR" value="R" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonS" value="S" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonT" value="T" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonU" value="U" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonV" value="V" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonW" value="W" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonX" value="X" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;"> 
+            <input type="submit" id="BotonY" value="Y" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+            <input type="submit" id="BotonZ" value="Z" class="btn btn-warning" style="width: 5rem; height: 5rem; border-color: black;">
+        </div>
+        <div class="container" style="text-align: center;">
+            <a class="btn btn-success" style="border-radius: 10rem;" asp-controller="Home" asp-action="Index">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8.354 1.646a.5.5 0 0 1 0 .708L2.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+                <path fill-rule="evenodd" d="M12.354 1.646a.5.5 0 0 1 0 .708L6.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z"/>
+            </svg>
+            Volver
+            </a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var palabra = "@dato";
+    var numero = "@numero";
+    var BotonA = document.getElementById("BotonA");
+    var BotonB = document.getElementById("BotonB");
+    var BotonC = document.getElementById("BotonC");
+    var BotonD = document.getElementById("BotonD");
+    var BotonE = document.getElementById("BotonE");
+    var BotonF = document.getElementById("BotonF");
+    var BotonG = document.getElementById("BotonG");
+    var BotonH = document.getElementById("BotonH");
+    var BotonI = document.getElementById("BotonI");
+    var BotonJ = document.getElementById("BotonJ");
+    var BotonK = document.getElementById("BotonK");
+    var BotonL = document.getElementById("BotonL");
+    var BotonM = document.getElementById("BotonM");
+    var BotonN = document.getElementById("BotonN");
+    var BotonO = document.getElementById("BotonO");
+    var BotonP = document.getElementById("BotonP");
+    var BotonQ = document.getElementById("BotonQ");
+    var BotonR = document.getElementById("BotonR");
+    var BotonS = document.getElementById("BotonS");
+    var BotonT = document.getElementById("BotonT");
+    var BotonU = document.getElementById("BotonU");
+    var BotonV = document.getElementById("BotonV");
+    var BotonW = document.getElementById("BotonW");
+    var BotonX = document.getElementById("BotonX");
+    var BotonY = document.getElementById("BotonY");
+    var BotonZ = document.getElementById("BotonZ");
+
+    var resultado;
+    var ganador = 0;    
+    const dato = [];
+    var vidas = 3;
+
+    function regresa()
+    {
+        var con = 0;      
+        for(var i = 0; i < numero; i++){
+            
+            if(resultado == palabra[i]){
+                dato[i] = resultado;
+                con++;
+                ganador+=1;
+            }
+        }
+        document.getElementById("lblPalabra").innerHTML = dato;
+        if(con == 0)
+        {
+            alert("Que mal la letra "+resultado+" No esta en la palabra, Pierdes una vida");
+            if(vidas == 3)
+            {
+                    document.getElementById("vida1").style.visibility = "hidden";
+            }
+            if(vidas == 2)
+            {
+                    document.getElementById("vida2").style.visibility = "hidden";
+            }
+            if(vidas == 1)
+            {
+                document.getElementById("vida3").style.visibility = "hidden";
+                alert("Has Perdido. La palabra era: "+palabra);
+            }
+            vidas = vidas - 1;
+            if(vidas <= 0)
+            {   
+                vidas = 0;
+            }
+        }
+
+        if(ganador == numero && vidas != 0)
+        {
+            alert("Has Ganado");
+        }
+    }
+
+    BotonA.onclick = function()
+    {
+        resultado = document.getElementById("BotonA").value;
+        regresa();
+        document.getElementById("BotonA").disabled=true;
+    }
+    BotonB.onclick = function()
+    {
+        resultado = document.getElementById("BotonB").value;
+        regresa();
+        document.getElementById("BotonB").disabled=true;
+    }
+    BotonC.onclick = function()
+    {
+        resultado = document.getElementById("BotonC").value;
+        regresa();
+        document.getElementById("BotonC").disabled=true;
+    }
+    BotonD.onclick = function()
+    {
+        resultado = document.getElementById("BotonD").value;
+        regresa();
+        document.getElementById("BotonD").disabled=true;
+    }
+    BotonE.onclick = function()
+    {
+        resultado = document.getElementById("BotonE").value;
+        regresa();
+        document.getElementById("BotonE").disabled=true;
+    }
+    BotonF.onclick = function()
+    {
+        resultado = document.getElementById("BotonF").value;
+        regresa();
+        document.getElementById("BotonF").disabled=true;
+    }
+    BotonG.onclick = function()
+    {
+        resultado = document.getElementById("BotonG").value;
+        regresa();
+        document.getElementById("BotonG").disabled=true;
+    }
+    BotonH.onclick = function()
+    {
+        resultado = document.getElementById("BotonH").value;
+        regresa();
+        document.getElementById("BotonH").disabled=true;
+    }
+    BotonI.onclick = function()
+    {
+        resultado = document.getElementById("BotonI").value;
+        regresa();
+        document.getElementById("BotonI").disabled=true;
+    }
+    BotonJ.onclick = function()
+    {
+        resultado = document.getElementById("BotonJ").value;
+        regresa();
+        document.getElementById("BotonJ").disabled=true;
+    }
+    BotonK.onclick = function()
+    {
+        resultado = document.getElementById("BotonK").value;
+        regresa();
+        document.getElementById("BotonK").disabled=true;
+    }
+    BotonL.onclick = function()
+    {
+        resultado = document.getElementById("BotonL").value;
+        regresa();
+        document.getElementById("BotonL").disabled=true;
+    }
+    BotonM.onclick = function()
+    {
+        resultado = document.getElementById("BotonM").value;
+        regresa();
+        document.getElementById("BotonM").disabled=true;
+    }
+    BotonN.onclick = function()
+    {
+        resultado = document.getElementById("BotonN").value;
+        regresa();
+        document.getElementById("BotonN").disabled=true;
+    }
+    BotonO.onclick = function()
+    {
+        resultado = document.getElementById("BotonO").value;
+        regresa();
+        document.getElementById("BotonO").disabled=true;
+    }
+    BotonP.onclick = function()
+    {
+        resultado = document.getElementById("BotonP").value;
+        regresa();
+        document.getElementById("BotonP").disabled=true;
+    }
+    BotonQ.onclick = function()
+    {
+        resultado = document.getElementById("BotonQ").value;
+        regresa();
+        document.getElementById("BotonQ").disabled=true;
+    }
+    BotonR.onclick = function()
+    {
+        resultado = document.getElementById("BotonR").value;
+        regresa();
+        document.getElementById("BotonR").disabled=true;
+    }
+    BotonS.onclick = function()
+    {
+        resultado = document.getElementById("BotonS").value;
+        regresa();
+        document.getElementById("BotonS").disabled=true;
+    }
+    BotonT.onclick = function()
+    {
+        resultado = document.getElementById("BotonT").value;
+        regresa();
+        document.getElementById("BotonT").disabled=true;
+    }
+    BotonU.onclick = function()
+    {
+        resultado = document.getElementById("BotonU").value;
+        regresa();
+        document.getElementById("BotonU").disabled=true;
+    }
+    BotonV.onclick = function()
+    {
+        resultado = document.getElementById("BotonV").value;
+        regresa();
+        document.getElementById("BotonV").disabled=true;
+    }
+    BotonW.onclick = function()
+    {
+        resultado = document.getElementById("BotonW").value;
+        regresa();
+        document.getElementById("BotonW").disabled=true;
+    }
+    BotonX.onclick = function()
+    {
+        resultado = document.getElementById("BotonX").value;
+        regresa();
+        document.getElementById("BotonX").disabled=true;
+    }
+    BotonY.onclick = function()
+    {
+        resultado = document.getElementById("BotonY").value;
+        regresa();
+        document.getElementById("BotonY").disabled=true;
+    }
+    BotonZ.onclick = function()
+    {
+        resultado = document.getElementById("BotonZ").value;
+        regresa();
+        document.getElementById("BotonZ").disabled=true;
+    }
+</script>

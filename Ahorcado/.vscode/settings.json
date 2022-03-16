@@ -1,0 +1,4 @@
+{
+    "appService.deploySubpath": "publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/2126b0d4-3857-4af5-9a66-e43f2a5c4298/resourceGroups/appsvc_windows_centralus/providers/Microsoft.Web/sites/AhorcadoUMG"
+}
